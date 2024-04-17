@@ -1,11 +1,8 @@
-// Variables que representan los factores para la toma de decisiones
-let energyLevel = parseInt(window.prompt("Enter Julian's energy level (0-100):")); // Nivel de energía de Julian (valor entre 0 y 100)
-let weather = window.prompt("Enter the weather (sunny, cold, rainy, etc.):").toLowerCase(); // Clima ("sunny", "cloudy", "rainy", etc.)
-let workload = window.confirm("Does Julian have a heavy workload?"); // Carga de trabajo (true si hay mucho trabajo, false si no)
+let energyLevel = parseInt(window.prompt("Enter Julian's energy level (0-100):"));
+let weather = window.prompt("Enter the weather (sunny, cold, rainy):").toLowerCase();
+let workload = window.confirm("Does Julian have a heavy workload?");
 
-// Evaluar las condiciones utilizando declaraciones if-else
-
-if (energyLevel >= 30) {
+if (!energyLevel) {
   console.log("Julian's energy level is too low. He should take a day off and rest.");
 } else if (weather === "rainy" && !workload) {
   console.log("It's rainy and Julian doesn't have much work. He will make a hot chocolate.");

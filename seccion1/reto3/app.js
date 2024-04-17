@@ -5,13 +5,14 @@ const accomodationCost = parseFloat(window.prompt("Enter the estimated accomodat
 const transportationCost = parseFloat(window.prompt("Enter the estimated transportation cost:"));
 const foodCost = parseFloat(window.prompt("Enter the estimated food cost:"));
 
-const totalTripCost = accomodationCost + transportationCost + foodCost;
+const costForItem = 20000;
+const umbral = costForItem * 3
 
-const moneyLeftOver = 20000;
+const totalTripCost = accomodationCost + transportationCost + foodCost + umbral;
 
-const remainingBudget = initialBudget - totalTripCost;
+const finalBudget = initialBudget - totalTripCost;
 
-if (remainingBudget >= moneyLeftOver) {
+if (finalBudget > umbral) {
   console.log("Julian has enough remaining budget to consider buying an additional item.");
 } else {
   console.log("Julian should avoid additional expenses to stay within his budget.");

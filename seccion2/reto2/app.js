@@ -15,7 +15,7 @@ function performAction(action, cost) {
     }
 }
 
-while (true) {
+ do{
     let choice = window.prompt("What do you want to do with your budget? (eat / book / save / nothing)").toLowerCase();
 
     if (choice === "eat") {
@@ -26,15 +26,18 @@ while (true) {
         performAction("Decided to save the money for today.", dailySavings);
     } else if (choice === "nothing") {
         console.log("You decided not to do anything else.");
+        break
     } else {
         console.log("Invalid option.");
         continue;
     }
+    
+    // let continuePrompt = window.confirm("Do you want to do something else?");
+    // if (!continuePrompt) {
+    //     break;
+    // }
 
-    let continuePrompt = window.confirm("Do you want to do something else?");
-    if (!continuePrompt) {
-        break;
-    }
-}
+}while(confirm("DO you want to do someting else?"))
+
 
 console.log(`After your decisions, you have ${dailyBudget} budget left.`);

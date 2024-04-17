@@ -20,7 +20,7 @@ if (weather !== "sunny" && weather !== "rainy") {
     // Ordenar los artículos por peso de forma ascendente
     let sortedItems = items.sort((a, b) => a.weight - b.weight);
 
-    //                                                                       Funciones                                                                  //
+    //                                                    Funciones                                                                  //
 
     // Funcion para agregar un item a la maleta
     function addItemToSuitcase(item) {
@@ -56,7 +56,6 @@ if (weather !== "sunny" && weather !== "rainy") {
         }
     }
 
-
     decideItemsToAdd(weather);
 
     // Agregar o no items extra
@@ -72,9 +71,11 @@ if (weather !== "sunny" && weather !== "rainy") {
             let selectedItem = availableItems.find(item => item.name.toLowerCase() === selectedOption.toLowerCase());
             
             if (selectedItem) {
-                // Agregar el elemento seleccionado a la maleta
+
+                // Agregar a la maleta
                 addItemToSuitcase(selectedItem);
-                // Agregar el nombre del elemento a la lista de elementos agregados
+
+                // Item agregado a los items agregados
                 addedItems.push(selectedItem.name);
             } else {
                 console.log("Invalid item selected. No more items will be added.");
@@ -85,5 +86,4 @@ if (weather !== "sunny" && weather !== "rainy") {
             break;
         }
     }
-
 }
