@@ -2,7 +2,7 @@ let weather = window.prompt("Enter the weather (sunny or rainy):").toLowerCase()
 
 // Verificar si el clima ingresado es válido
 if (weather !== "sunny" && weather !== "rainy") {
-    console.log("Invalid weather input. Please enter 'sunny' or 'rainy'.");
+  console.log("Invalid weather input. Please enter 'sunny' or 'rainy'.");
 } else {
     let remainingSpace = parseFloat(window.prompt("Enter the remaining space in your suitcase (in kilograms):"));
 
@@ -35,8 +35,8 @@ if (weather !== "sunny" && weather !== "rainy") {
         }
     }
 
-    // Funcion para decidir que items agregar a la maleta
-    function decideItemsToAdd(weather) {
+    // Funcion para decidir si se agrega el sombrero o la sombrilla automaticamente a la maleta
+    function addWeatherDependentItems(weather) {
         if (weather === "rainy") {
             console.log("It's raining. We will add the umbrella automatically.");
             let umbrellaIndex = sortedItems.findIndex(item => item.name === "umbrella");
@@ -56,9 +56,8 @@ if (weather !== "sunny" && weather !== "rainy") {
         }
     }
 
-    decideItemsToAdd(weather);
+    addWeatherDependentItems(weather);
 
-    // Agregar o no items extra
     let addedItems = [];
 
     // Agregar o no items extra
@@ -72,10 +71,10 @@ if (weather !== "sunny" && weather !== "rainy") {
             
             if (selectedItem) {
 
-                // Agregar a la maleta
+                // Llama a la funcion que añade el item a la maleta y hace el proceso de restar la cantidad de espacio disponible en la maleta
                 addItemToSuitcase(selectedItem);
 
-                // Item agregado a los items agregados
+                // Item agregado a los items agregados, esto hace que cuando el programa se vuelva a repetir, si el item ya esta en addedItems no salga en el availableItems cuando muestre los items disponibles para agregar
                 addedItems.push(selectedItem.name);
             } else {
                 console.log("Invalid item selected. No more items will be added.");

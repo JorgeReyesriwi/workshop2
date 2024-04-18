@@ -1,4 +1,4 @@
-let energyLevel = parseInt(window.prompt("Enter Julian's energy level (0-100):"));
+let energyLevel = parseInt(window.confirm("Julian, do you have energy?:"));
 let weather = window.prompt("Enter the weather (sunny, cold, rainy):").toLowerCase();
 let workload = window.confirm("Does Julian have a heavy workload?");
 

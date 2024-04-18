@@ -1,4 +1,4 @@
-// Julian's Trip
+// Viaje de julian
 
 const destination = window.prompt("Enter the destination you want to go to:");
 console.log(`Destination: ${destination}`);

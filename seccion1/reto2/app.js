@@ -1,11 +1,6 @@
-// Add a new souvenir
-function addSouvenir(souvenirList, name, cost, available) {
-  souvenirList.push({name, cost, available});
-  console.log(`"${name}" added to the list.`);
-}
-
 let souvenirList = [];
 
+// Agregar un nuevo souvenir
 function addSouvenir(souvenirList, name, cost, available) {
   if (checkDataTypes(name, cost, available)) {
       souvenirList.push({ name, cost, available });

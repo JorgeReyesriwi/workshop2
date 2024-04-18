@@ -3,6 +3,7 @@ let mealCost = 30000;
 let bookCost = 50000;
 let dailySavings = 20000;
 
+// esta funcion va a verificar si puede cumplir la accion que desea el usuario, en este caso si puede cumplir la accion va a decirle que puede hacerla y va a restar lo que cuesta esa accion de el presupuesto, si no es posible realizar la accion dira que no tenemos el dinero para relaizar la accion
 function performAction(action, cost) {
     if (dailyBudget >= cost) {
         console.log(`You can ${action} today`);
@@ -15,6 +16,7 @@ function performAction(action, cost) {
     }
 }
 
+// Aqui implemente un do while, no sabia muy bien como se usaba, pero lo que entendi es que el do hara que se ejecute el codigo dentro de las llaves y el while va al final y me sirve para salir del ciclo con el confirm
  do{
     let choice = window.prompt("What do you want to do with your budget? (eat / book / save / nothing)").toLowerCase();
 
@@ -38,6 +40,5 @@ function performAction(action, cost) {
     // }
 
 }while(confirm("DO you want to do someting else?"))
-
 
 console.log(`After your decisions, you have ${dailyBudget} budget left.`);
